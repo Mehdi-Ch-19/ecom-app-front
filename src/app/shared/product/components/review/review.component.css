@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+.container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    
+    gap: 50px;
+}
+.review-form{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding: 40px;
+    border-radius: 15px;
+}
+.star-rating {
+    display: inline-block;
+    margin-bottom: 20px;
+  }
+
+  .star {
+    display: inline-block;
+      width: 20px;
+      height: 20px;
+      margin-right: 2px;
+      cursor: pointer;
+      background: url('/assets/img/star.png') no-repeat;
+      background-size: contain;
+      transition: background-position 0.3s;
+   }
+
+  .checked {
+    color: rgb(0, 97, 42);
+}
+.inputs{
+    border-radius: 8px;
+    padding: 5px;
+    padding-left: 5px;
+    margin-bottom: 10px;
+    border: 1px solid gray;
+    font-size: 17px;
+    font-weight: 500;
+}
+.btn-cart{
+    padding: 5px 15px;
+    padding-left: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #ffffff;
+  font-family: 'Poppins', sans-serif;
+  background-color:#0D3D29 ;
+  font-weight:600;
+  border: 1.5px solid ;
+  border-color: #0D3D29;
+  width: 250px;
+  height: 50px;
+}
+.reviews{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding: 40px;
+    border-radius: 15px;
+    width: 500px;
+}
+.single-review{
+    display: grid;
+    grid-row: 1fr 1fr;
+}
+.stars-date{
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+    gap: 80px;
+    margin-bottom: -10px;
+}
+hr {
+    border: 0;
+    clear:both;
+    display:block;
+    width: 100%;               
+    background-color:#b2b2ac;
+    height: 1px;
+  }

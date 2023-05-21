@@ -1,0 +1,21 @@
+<div class="center"> 
+    <div class="conatiner">
+        <h1 class="title">New Arrivals</h1>
+        <div class="products">
+            <div class="product-box" *ngFor="let product of products">
+                <div class="white-box">
+                    <!-- <button class="wishlist-button" (click)="toggle()" style="background: transparent; ">
+                        <span class="heart-icon" [class.active]="isIWishList"></span>
+                    </button> -->
+                    <app-wish-button [product]="product" [isIWishList]="product.iswishlist"></app-wish-button>
+                    <input type="image" [src]="product.imageUrl" [routerLink]="['product/',product.id]">
+                </div>
+                 <h4 class="product-title">{{product.productTitle}}</h4>
+                <div class="product-price">
+                    <h3 class="price">${{product.price}}</h3>
+                    <button class="btn-style">Add to cart</button>
+                </div>
+            </div>  
+        </div>
+    </div>
+</div>

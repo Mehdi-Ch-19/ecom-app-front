@@ -1,0 +1,41 @@
+<h2 style="margin-top: 50px;font-weight: 800;font-family: Verdana, Geneva, Tahoma, sans-serif;">Reviews</h2>
+<div class="container">
+    <div class="review-form">
+        <h3 style="font-size: 25px;font-weight: 900;margin-bottom: 23px;">Add a review</h3>
+        <div class="star-rating">
+            <span
+            class="fa fa-star "
+            style="font-size: 25px;width: 30px; "
+              *ngFor="let star of stars"
+              [ngClass]="{ 'checked': star <= currentRating }"
+              (click)="onStarClicked(star)"
+               
+            ></span>
+        </div>
+          <form style="display: flex;flex-direction: column;">
+            <input placeholder="Titre" class="inputs">
+            <textarea placeholder="Was it good ? Pros? Cons? "class="inputs" rows="3" cols="50"></textarea>
+          </form>
+          <button class="btn-cart">Submit Your Review</button>
+    </div>
+    <div class="reviews">
+        <h2 style="margin-bottom: 20px;">All reviews</h2>
+        <div class="single-review" *ngFor="let review of reviews">
+          <hr>
+          <div class="stars-date">
+            <div class="star-rating">
+              <span
+              class="fa fa-star "
+              style="font-size: 24px;width: 25px; "
+                *ngFor="let star of stars"
+                [ngClass]="{ 'checked': star <= review.rating! }"
+                 
+              ></span>
+          </div>
+            <h5 style="font-weight: 500; color: #b2b2ac;">{{review.reviewedAt}}</h5>
+          </div>
+          <h3 style="font-family: 'Poppins';">{{review.title}}</h3>
+          <p style="font-family: 'Poppins';">{{review.comment}}</p>
+        </div>
+    </div>
+</div>

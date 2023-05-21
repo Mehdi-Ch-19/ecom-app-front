@@ -1,0 +1,27 @@
+
+.wishlist-button {
+    position: absolute;
+    top: 0px;
+    right: 2px;
+    left: 80%;
+    background-color: transparent;
+    width: 40px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  }
+  
+.heart-icon {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-image: url('/assets/img/black-wishlist-icon.png'); /* Replace with your heart icon image */
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: transform 0.3s;
+  }
+  
+  .heart-icon.active {
+    background-image: url('/assets/img/red-wishlist-icon.png'); /* Replace with your active heart icon image */
+    transform: scale(1.2);
+  }

@@ -1,0 +1,29 @@
+ 
+  <div class="super-conatiner">
+    <div class="main">
+       
+      <div class="container b-container is-txl is-z200" id="b-container">
+        <form class="form" id="b-form" [formGroup]="loginForm" (ngSubmit)="onFormSubmit(loginForm)">
+          <h2 class="form_title title">Sign in to Website</h2>
+         <input class="form__input"  formControlName="email"type="text" placeholder="Email">
+          <input class="form__input" formControlName="password" type="password" placeholder="Password"> 
+          <button class="form__button button submit">SIGN IN</button>
+        </form>
+      </div>
+      <div class="switch is-txr" id="switch-cnt  ">
+        <div class="switch__circle is-txr"></div>
+        <div class="switch__circle switch__circle--t is-txr"></div>
+        <div class=" switch__container is-hidden" id="switch-c1">
+          <h2 class="switch__title title">Welcome Back !</h2>
+          <p class="switch__description description">To keep connected with us please login with your personal info</p>
+          <button class="switch__button button switch-btn">SIGN IN</button>
+        </div>
+        <div class="switch__container" id="switch-c2">
+          <h2 class="switch__title title">Hello Friend !</h2>
+          <p class="switch__description description">Enter your personal details and start journey with us</p>
+          <button class="switch__button button switch-btn" (click)="routetosignup()">SIGN UP</button>
+        </div>
+      </div>
+    </div>
+</div>
+ 
