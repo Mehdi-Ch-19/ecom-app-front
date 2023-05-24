@@ -12,6 +12,6 @@ export class Product{
     countInStock? : number ;
     rating?:number;
     category? :Category;
-    reviews? : Review[]
+    reviews? : Review[];
     iswishlist :boolean = false
 }

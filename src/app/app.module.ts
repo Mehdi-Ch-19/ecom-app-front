@@ -9,6 +9,8 @@ import { CoreModule } from './core/core.module';
 import { CategoryModule } from './shared/catgories/category.module';
 import { ProductModule } from './shared/product/product.module';
 import { AccountModule } from './shared/account/account.module';
+import { ReactiveFormsModule } from '@angular/forms';
+import { CartModule } from './shared/cart/cart.module';
 
 @NgModule({
   declarations: [
@@ -22,6 +24,9 @@ import { AccountModule } from './shared/account/account.module';
     CategoryModule,
     CoreModule,
     ProductModule,
+    AccountModule,
+    CartModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,28 @@
+ <div class="conatiner">
+    <h2>Cart </h2>
+    <div *ngFor="let p of products" >
+        <app-single-cart-item [productitem]="p" (onitemdeleted)="deleteproduct($event)"></app-single-cart-item>
+    </div>
+    <div class="orderinfo">
+        <div class="order-conatiner">
+            <h3>Products</h3>
+            <h3 class="price">${{total_products_price}}</h3>
+        </div>
+        <hr>
+        <div class="order-conatiner">
+            <h3>shiping</h3>
+            <h3 class="price">$5</h3>
+        </div>
+        <hr>
+
+        <div class="order-conatiner">
+            <h3>Total</h3>
+            <h3 class="total">{{total_price}}</h3>
+        </div>
+        <hr>
+        
+    </div>
+    <div *ngIf="products.length == 0" style="margin-top: 20px;">
+        <h2>Your card is empty</h2>
+    </div>
+ </div>

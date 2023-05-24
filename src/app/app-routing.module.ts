@@ -15,6 +15,10 @@ const routes: Routes = [
 
   },
   {
+    path:"cart",loadChildren:()=>import("./shared/cart/cart.module").then((m)=>m.CartModule)
+
+  },
+  {
     path:"**",redirectTo:'home',pathMatch:'full'
   }
    

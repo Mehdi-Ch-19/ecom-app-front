@@ -8,18 +8,12 @@ import { ProductserviceService } from 'src/app/core/service/productservice.servi
   styleUrls: ['./feature-product.component.css']
 })
 export class FeatureProductComponent implements OnInit {
-  products : Product[] = []
 
-  constructor(private productService : ProductserviceService) { }
+  constructor( ) { }
 
   ngOnInit(): void {
-    this.productService.allproducts().subscribe(data=>{
-      this.products = data
-    },
-    error=>{
-      
-    })
-
+    
+    
   }
 
 }

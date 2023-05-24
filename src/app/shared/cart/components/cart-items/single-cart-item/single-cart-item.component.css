@@ -1,0 +1,58 @@
+
+.single-item{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 0.5fr;
+    align-items: center;
+    margin-left: 10px;
+}
+.image{
+    height: 150px;
+    width: 150px;
+    border: 1px ridge rgb(173, 171, 171);
+    border-radius: 20px;
+    padding: 20px;
+}
+.btns{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin-left: 60px;
+}
+.btn{
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    font-weight: 900;
+    background-color: #eee;
+}
+.price{
+    font-weight:600 ;
+    font-family: 'Poppins';
+    word-spacing: 10px;
+    margin-left: 40px;
+    align-self: center;
+    font-size: 30px;
+}
+.delete{
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    font-weight: 900;
+    background-color: #5e5858;
+    border-radius: 20px;
+    border: none;
+    color: white;
+    font-size: 20px;
+}
+hr {
+    border: 0;
+    margin-top: 25px;
+    clear:both;
+    display:block;
+    width: 100%;               
+    background-color:#b2b2ac;
+    height: 1px;
+  }
+  .title{
+    font-family: 'Poppins';
+  }

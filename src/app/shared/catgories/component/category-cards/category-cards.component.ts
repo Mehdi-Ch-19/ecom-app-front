@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Category } from 'src/app/core/models/category';
 import { Product } from 'src/app/core/models/product';
+import { CartService } from 'src/app/core/service/cart.service';
 import { CategoryService } from 'src/app/core/service/category.service';
 import { ProductserviceService } from 'src/app/core/service/productservice.service';
 
@@ -11,10 +12,12 @@ import { ProductserviceService } from 'src/app/core/service/productservice.servi
 })
 export class CategoryCardsComponent implements OnInit {
   categories : Category[] = []
+  products : Product[] = []
 
   category_products : products_percategry[] = []
 
-  constructor(private productService : ProductserviceService,private categoryService:CategoryService) { }
+  constructor(private productService : ProductserviceService,private categoryService:CategoryService
+    , private cartservice:CartService) { }
 
   ngOnInit(): void {
     this.categoryService.category_list().subscribe(data=>{
@@ -27,6 +30,11 @@ export class CategoryCardsComponent implements OnInit {
       })
     })
     
+  }
+  addtocart(product:Product){
+    this.cartservice.addtocart(product)
+    this.cartservice.cartnumber.next(this.cartservice.products.length)
+
   }
    XOR(a:boolean,b:boolean) {
     console.log( ( a || b ) && !( a && b ));

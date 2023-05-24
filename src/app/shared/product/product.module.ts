@@ -18,7 +18,7 @@ import { ReviewComponent } from './components/review/review.component';
     ProductRoutingModule
   ],
   exports:[
-    SingleProductComponent
+    ProductComponent
   ]
 })
 export class ProductModule { }

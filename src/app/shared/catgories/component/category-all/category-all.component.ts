@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, ParamMap } from '@angular/router';
+import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { sorting } from 'src/app/core/enums/sorting-enum';
 import { Product } from 'src/app/core/models/product';
+import { CartService } from 'src/app/core/service/cart.service';
 import { ProductserviceService } from 'src/app/core/service/productservice.service';
 @Component({
   selector: 'app-category-all',
@@ -12,7 +13,7 @@ export class CategoryAllComponent implements OnInit {
 
    products : Product[] = []
 
-  constructor(private route: ActivatedRoute,
+  constructor(private route: ActivatedRoute,private router :Router, private cartservice:CartService,
     private productservice:ProductserviceService) { }
 
   ngOnInit(): void {
@@ -26,6 +27,14 @@ export class CategoryAllComponent implements OnInit {
       }
     )
       
+  }
+  addtocart(product:Product){
+    this.cartservice.addtocart(product)
+    this.cartservice.cartnumber.next(this.cartservice.products.length)
+
+  }
+  routeToProduct(id:number){
+    this.router.navigate(['product/',id])
   }
   onOptionsSelected(value:string) {
     if(value == 'Top'){

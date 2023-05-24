@@ -31,6 +31,9 @@ export class AuthService {
             this.tokenservice.storeUserId(result.id)
          }))  
     }
+    signup(signupRequest:any):Observable<any>{{
+        return this.http.post(this.apiUrl + this.SignUpEndpoint,signupRequest)
+    }}
     
   generateNewTokens(): Observable<HttpEvent<any>> {
     const refresh_token = this.userDataSubject.value?.refresh_token;

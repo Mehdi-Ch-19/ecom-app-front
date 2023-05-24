@@ -7,6 +7,8 @@ import { LoginComponent } from './component/login/login.component';
 import { SignupComponent } from './component/signup/signup.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CoreModule } from 'src/app/core/core.module';
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
+import { MyaccountComponent } from './component/myaccount/myaccount.component';
 
 
 
@@ -14,12 +16,14 @@ import { CoreModule } from 'src/app/core/core.module';
   declarations: [
     AccountComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    MyaccountComponent
   ],
   imports: [
     CommonModule,
     ReactiveFormsModule,
     CoreModule,
+    SweetAlert2Module,
     RouterModule.forChild(AccountRoutes)
   ]
 })

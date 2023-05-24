@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+.conatiner{
+    background-color: white;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border-radius: 20px;
+}
+.single-item{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 0.5fr;
+    align-items: center;
+    margin-left: 10px;
+}
+.image{
+    height: 150px;
+    width: 150px;
+    border: 1px ridge rgb(173, 171, 171);
+    border-radius: 20px;
+    padding: 20px;
+}
+.btns{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin-left: 60px;
+}
+.btn{
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    font-weight: 900;
+    background-color: #eee;
+}
+.price{
+    font-weight:500 ;
+    font-family: 'Poppins';
+    word-spacing: 10px;
+    margin-left: 40px;
+    align-self: center;
+}
+.delete{
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    font-weight: 900;
+    background-color: #5e5858;
+    border-radius: 20px;
+    border: none;
+    color: white;
+    font-size: 20px;
+}
+hr {
+    border: 0;
+    clear:both;
+    display:block;
+    width: 100%;               
+    background-color:#b2b2ac;
+    height: 1px;
+  }
+  .title{
+    font-family: 'Poppins';
+  }
+  .orderinfo{
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    margin-left: 50px;
+  }
+  .order-conatiner{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 300px;
+  }
+.total{
+    font-weight:800 ;
+    font-family: 'Poppins';
+    word-spacing: 10px;
+    margin-left: 40px;
+    align-self: center;
+}

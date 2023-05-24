@@ -1,0 +1,12 @@
+<div class="single-item">
+    <img [src]="productitem!.productImage" class="image"> 
+    <h3 class="title">{{productitem.productName}}</h3>
+    <div class="btns">
+        <button class="btn" (click)="down()">-</button>
+        <h5 style="margin-top: 5px;">{{productitem.quantity}}</h5>
+        <button class="btn" (click)="up()">+</button>
+    </div>
+    <h5 class="price">${{productitem.price}}</h5>
+    <button class="delete" (click)="deleteproduct(productitem.productId!)">X</button>
+</div>
+<hr>
