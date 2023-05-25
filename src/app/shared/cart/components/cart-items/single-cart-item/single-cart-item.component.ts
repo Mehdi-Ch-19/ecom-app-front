@@ -10,7 +10,7 @@ import { ProductItem } from 'src/app/core/models/productitem';
 export class SingleCartItemComponent implements OnInit  {
   @Input() productitem! : ProductItem 
    @Output() onitemdeleted :EventEmitter<any> = new EventEmitter<any>()
-   
+    @Output() onitemEdited  :EventEmitter<any> = new EventEmitter<any>()
   constructor() { 
     console.log("kkk")
   }
@@ -33,13 +33,13 @@ export class SingleCartItemComponent implements OnInit  {
   up(){
     this.productitem.quantity!++
     this.productitem.price =  this.productitem.unitPrice! * this.productitem.quantity!
-
+    this.onitemEdited.emit(this.productitem)
   }
   down(){
     if(this.productitem.quantity! > 1){
       this.productitem.quantity!--
       this.productitem.price =  this.productitem.unitPrice! * this.productitem.quantity!
-
+      this.onitemEdited.emit(this.productitem)
     }
     
   }

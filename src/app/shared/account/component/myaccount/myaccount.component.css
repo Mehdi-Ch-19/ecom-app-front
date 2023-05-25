@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+.center{
+    max-width: 75%;
+  margin: 0 auto;
+  padding: 0 20px;
+  margin-top: 120px;
+  max-height:  none ;
+  margin-bottom: 25px;
+}
+.conatiner{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 50px;
+}
+.order-wishlist{
+    background-color: white;
+    border: 1px solid black;
+    height: max-content; 
+    border-radius: 20px;
+    display: flex ;
+    flex-direction: column;
+    padding: 50px;
+}
+.customer-info{
+    background-color: white;
+    border: 1px solid black;
+    height: 500px;
+    border-radius: 20px;
+
+}
+.titles-conatiner{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+.titles{
+    background-color: white;
+    color: rgb(169, 169, 169);
+    font-size: 30px;
+    border: none;
+    cursor: pointer;
+    font-family: 'Poppins';
+    font-weight: 400;
+}
+.content{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    margin-left: 10px;
+    font-size: 20px;
+    margin-bottom: -10px;
+}
+.order-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+    gap: 20px;
+    
+}
+.products{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+}
+.info{
+    display: flex;
+    flex-direction: column;
+}
+.info h3{
+    color: rgb(114, 110, 103);
+    font-size: 18px;
+    font-weight: 500;
+}
+.quantity{
+    color: rgb(114, 110, 103);
+    font-size: 25px;
+}
+.product{
+    font-family: 'Poppins';
+    font-size: 25px;
+}
+hr{
+    border: 0;
+    clear:both;
+    display:block;
+    width: 100%;               
+    background-color:#b2b2ac;
+    height: 1px;
+}
+.active{ background-color: white;
+    color: rgb(169, 169, 169);
+    font-size: 30px;
+    border: none;
+    cursor: pointer;
+    font-family: 'Poppins';
+    font-weight: 400;
+    color: black;
+    border-bottom: 4px solid black;
+    outline: none;
+}
+.wishlist{
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+    gap: 20px;
+}

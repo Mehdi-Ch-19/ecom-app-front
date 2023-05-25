@@ -24,6 +24,9 @@ import { WishButtonComponent } from './component/wish-button/wish-button.compone
     CoreModule,
     RouterModule.forChild(HomeRoutes),
      ProductModule
+  ],
+  exports:[
+    WishButtonComponent
   ]
 })
 export class HomeModule { }

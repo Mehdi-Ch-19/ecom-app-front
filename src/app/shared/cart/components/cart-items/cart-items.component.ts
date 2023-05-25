@@ -21,7 +21,7 @@ export class CartItemsComponent implements OnInit {
     // console.log(this.products)
     this.cartservice.productitemsubjext.subscribe(data=>{
       this.products = data
-      console.log(this.products)
+      //console.log(this.products)
     })
     this.products= this.cartservice.productsItem
     this.total_products_price = this.gettotal(this.products)
@@ -29,12 +29,18 @@ export class CartItemsComponent implements OnInit {
   }
   deleteproduct(event:any){
     let id =  event.id
-    console.log(event)
+    //console.log(event)
     this.cartservice.deleteproduct(event)
     this.total_products_price = this.gettotal(this.products)
-    this.total_price += this.total_products_price+ 5
+    this.total_price = this.total_products_price+ 5
 
   }
+  edititem(event :any){
+   // console.log(event)
+    this.cartservice.edititem(event)
+    this.total_products_price = this.gettotal(this.products)
+    this.total_price = this.total_products_price+ 5
+    }
   gettotal(products:ProductItem[]){
     let sum = 0
     this.products.forEach(p=>{

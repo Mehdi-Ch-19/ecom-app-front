@@ -9,6 +9,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { CoreModule } from 'src/app/core/core.module';
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 import { MyaccountComponent } from './component/myaccount/myaccount.component';
+import { WishButtonComponent } from '../home/component/wish-button/wish-button.component';
+import { HomeModule } from '../home/home.module';
 
 
 
@@ -22,6 +24,7 @@ import { MyaccountComponent } from './component/myaccount/myaccount.component';
   imports: [
     CommonModule,
     ReactiveFormsModule,
+    HomeModule,
     CoreModule,
     SweetAlert2Module,
     RouterModule.forChild(AccountRoutes)

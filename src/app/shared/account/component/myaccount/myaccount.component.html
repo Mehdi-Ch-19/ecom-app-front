@@ -1,1 +1,66 @@
-<p>myaccount works!</p>
+<div class="center">
+    <div class="conatiner">
+        <div class="order-wishlist">
+            <div class="titles-conatiner">
+                <button class="titles"  [ngClass]=" {'active':toggleBetweenBtn == true} " (click)="ordersclick()">Orders</button>
+                <button class="titles" [ngClass]=" {'active':!toggleBetweenBtn == true} "   (click)="wishlistclick()">Wishlit</button>
+            </div>
+            <div class="content" *ngIf="toggleBetweenBtn">
+                <h2 style="color: dark;font-weight: 500; font-size: 18px;font-family: 'Poppins';">2015-02-02358</h2>
+                <div class="order-info">
+                    <div class="info">
+                        <h3>David chappeelle</h3>
+                        <h3>davidch@gmail.com</h3>
+                        <h3>test123</h3>
+                        <h3>stoklhom 12 rabat</h3>
+                    </div>
+                    <div class="products">
+                        <h3 class="product"><span class="quantity">1x </span>Sony Vh30525 ss</h3>
+                        <h3>55555</h3>
+                        <h3>55555</h3>
+                    </div>
+                </div>
+                <hr>
+            </div>
+            <div class="content" *ngIf="toggleBetweenBtn">
+                <h2 style="color: dark;font-weight: 500; font-size: 18px;font-family: 'Poppins';">2015-02-02358</h2>
+                <div class="order-info">
+                    <div class="info">
+                        <h3>David chappeelle</h3>
+                        <h3>davidch@gmail.com</h3>
+                        <h3>test123</h3>
+                        <h3>stoklhom 12 rabat</h3>
+                    </div>
+                    <div class="products">
+                        <h3 class="product"><span class="quantity">1x </span>Sony Vh30525 ss</h3>
+                        <h3>55555</h3>
+                        <h3>55555</h3>
+                    </div>
+                </div>
+                <hr>
+            </div>
+        
+
+            <div class="wishlist" *ngIf="!toggleBetweenBtn">
+                <div class="product-box" *ngFor="let product of wishlistProducts">
+                    <div class="white-box">
+                        <!-- <button class="wishlist-button" (click)="toggle()" style="background: transparent; ">
+                            <span class="heart-icon" [class.active]="isIWishList"></span>
+                        </button> -->
+                        <app-wish-button [product]="product" [isIWishList]="product.iswishlist"></app-wish-button>
+                        <input type="image" [src]="product.imageUrl" [routerLink]="['product/',product.id]">
+                    </div>
+                     <h4 class="product-title">{{product.productTitle}}</h4>
+                    <div class="product-price">
+                        <h3 class="price">${{product.price}}</h3>
+                        <button class="btn-style" (click)="addtocart(product)">Add to cart</button>
+                    </div>
+                </div>  
+            </div>
+        </div>
+        <div class="customer-info">
+
+        </div>
+    </div>
+   
+</div>

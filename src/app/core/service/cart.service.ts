@@ -14,17 +14,24 @@ export class CartService {
   constructor() {
      
    }
+   edititem(productitem :ProductItem){
+    let index = this.productsItem.indexOf(productitem)
+    console.log(this.productsItem)
+   // console.log(index)
+    this.productsItem[index] = productitem
+    this.productitemsubjext.next(this.productsItem)
+   }
    deleteproduct(id :number){
       let index = this.productsItem.findIndex(f=>{f.productId == id})
       this.productsItem.splice(index,1)
-      console.log(this.products)
+      //console.log(this.products)
       this.products.forEach(p=>{
         if(p.id == id){
           let i  = this.productsItem.findIndex(f=>{f.productId == id})
           this.products.splice(i,1)
         }
       })
-      console.log(this.products)
+     // console.log(this.products)
 
       this.cartnumber.next(this.products.length)
       this.productitemsubjext.next(this.productsItem)
@@ -51,7 +58,7 @@ export class CartService {
         singleproductitem.quantity = count++
         singleproductitem.price = singleproductitem.unitPrice!*singleproductitem.quantity 
         let index = this.productsItem.findIndex(i => i.productId = product.id)
-        console.log(index)
+       // console.log(index)
         this.productsItem[index] = singleproductitem
       }
       console.log(this.productsItem)
