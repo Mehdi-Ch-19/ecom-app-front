@@ -15,7 +15,6 @@
 }
 .order-wishlist{
     background-color: white;
-    border: 1px solid black;
     height: max-content; 
     border-radius: 20px;
     display: flex ;
@@ -24,10 +23,16 @@
 }
 .customer-info{
     background-color: white;
-    border: 1px solid black;
-    height: 500px;
+    height: min-content;
     border-radius: 20px;
-
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+}
+.customer-info h3{
+    margin-top: 50px;
+    font-weight: 700;
+    font-family: 'Poppins';
 }
 .titles-conatiner{
     display: flex;
@@ -73,6 +78,14 @@
     color: rgb(114, 110, 103);
     font-size: 18px;
     font-weight: 500;
+    margin-bottom: -1px;
+}
+.info span{
+    color: rgb(114, 110, 103);
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: -2px;
+
 }
 .quantity{
     color: rgb(114, 110, 103);
@@ -105,4 +118,108 @@ hr{
     display: grid;
     grid-template-columns: 1fr 1fr ;
     gap: 20px;
+}
+
+.product-box{
+    display: flex;
+    flex-direction: column;
+}
+.white-box{
+    background-color: #ffffff;
+    padding: 10px;
+    height: 200px;
+    text-align: center;
+  position: relative;
+    border-radius: 20px;
+    border-color: black;
+    margin-bottom: 10px;
+    border: 1px solid #0D3D29;
+}
+.white-box input{
+    height: 150px;
+    width: 150px;
+    margin-top: 20px;
+}
+.wishlist-button {
+    position: absolute;
+    top: 0px;
+    right: 2px;
+    left: 80%;
+    background-color: transparent;
+    width: 40px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  }
+.product-title{
+    font-family: 'Poppins';
+    font-weight: 500;
+}
+.product-price{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.btn-style{
+  padding: 5px 15px;
+  padding-left: 30px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  font-weight:600;
+  border: 1.5px solid ;
+  border-color: #0D3D29;
+  width: 150px;
+  background-color: #0D3D29;
+}
+.price{
+    font-weight:900 ;
+    font-family: 'Poppins';
+}
+.inputs{
+    border-radius: 8px;
+    padding: 5px;
+    padding-left: 5px;
+    margin-bottom: 10px;
+    border: 1.5px solid gray;
+    font-size: 17px;
+    font-weight: 500;
+    color: black;
+}
+.save-btn{
+    padding: 5px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-block;
+    align-items: center;
+    text-decoration: none;
+    align-self: center;
+    text-align: center;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-weight:600;
+    border: 1.5px solid ;
+    border-color: #0D3D29;
+    width: 300px;
+    background-color: black;
+  
+}
+.logout-btn{
+    padding: 5px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-weight:600;
+    border: 1.5px solid ;
+    border-color: #0D3D29;
+    width: 110px;
+    background-color: #0D3D29;
 }

@@ -2,7 +2,7 @@ import { Category } from "./category";
 import { Review } from "./review";
 
 export class Product{
-    id? : number;
+    id? : string;
     productTitle? : string;
     imageUrl? : string;
     description? : string;

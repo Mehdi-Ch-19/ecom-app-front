@@ -12,7 +12,7 @@ export class SingleCartItemComponent implements OnInit  {
    @Output() onitemdeleted :EventEmitter<any> = new EventEmitter<any>()
     @Output() onitemEdited  :EventEmitter<any> = new EventEmitter<any>()
   constructor() { 
-    console.log("kkk")
+   // console.log("kkk")
   }
   
 
@@ -23,10 +23,10 @@ export class SingleCartItemComponent implements OnInit  {
     // this.productitem.quantity = this.count
     // this.productitem.unitPrice = this.product.price! 
     // this.productitem.price = this.productitem.unitPrice* this.count
-    console.log(this.productitem)
+    //console.log(this.productitem)
   }
 
- deleteproduct(id : number){
+ deleteproduct(id : string){
     this.onitemdeleted.emit(id)
  }
 

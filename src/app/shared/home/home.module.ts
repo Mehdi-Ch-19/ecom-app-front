@@ -7,8 +7,9 @@ import { HomeRoutes } from './home-rounting.module';
 import { NewArrivalComponent } from './component/new-arrival/new-arrival.component';
 import { CoreModule } from 'src/app/core/core.module';
 import { ProductModule } from '../product/product.module';
-import { ProductComponent } from '../product/product.component';
-import { WishButtonComponent } from './component/wish-button/wish-button.component';
+
+import { WishlistModule } from '../wishlist/wishlist.module';
+import { WishButtonComponent } from '../wishlist/wish-button/wish-button.component';
 
 
 
@@ -17,16 +18,15 @@ import { WishButtonComponent } from './component/wish-button/wish-button.compone
     FeatureProductComponent,
     HomeComponent,
     NewArrivalComponent,
-    WishButtonComponent
-  ],
+   ],
   imports: [
     CommonModule,
     CoreModule,
     RouterModule.forChild(HomeRoutes),
-     ProductModule
+     ProductModule,
+     WishlistModule
   ],
   exports:[
-    WishButtonComponent
-  ]
+   ]
 })
 export class HomeModule { }

@@ -1,0 +1,40 @@
+import { Injectable } from '@angular/core';
+import {
+  HttpRequest,
+  HttpHandler,
+  HttpEvent,
+  HttpInterceptor
+} from '@angular/common/http';
+import { Observable, catchError, throwError } from 'rxjs';
+import { AuthService } from '../auth/service/auth.service';
+import { Router } from '@angular/router';
+
+@Injectable()
+export class ErrorInterceptor implements HttpInterceptor {
+
+  constructor(private authService :AuthService,private router :Router)  {}
+
+  intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+    return next.handle(request).pipe(catchError((res) => this.errorHandler(res)));
+  }
+  
+  private errorHandler(response: any): Observable<any> {
+    // console.error('root error res', response)
+    const status = response?.status;
+    if (status === 401 || status === 403) {
+      this.authService.logout();
+      this.router.navigate(['account/login'])
+    }
+    const error = response.error;
+    let message = response.message;
+    if (typeof error === 'object') {
+      const keys = Object.keys(error);
+      if (keys.some(item => item === 'message')) {
+        message = error.message;
+      }
+    } else if (typeof error === 'string') {
+      message = error;
+    }
+    return throwError({ message, status });
+  }
+}

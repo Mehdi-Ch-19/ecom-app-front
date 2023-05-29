@@ -1,6 +1,7 @@
 <h2 style="margin-top: 50px;font-weight: 800;font-family: Verdana, Geneva, Tahoma, sans-serif;">Reviews</h2>
 <div class="container">
     <div class="review-form">
+      <form [formGroup]="reviewForm" (ngSubmit)="onFormSubmit(reviewForm)">
         <h3 style="font-size: 25px;font-weight: 900;margin-bottom: 23px;">Add a review</h3>
         <div class="star-rating">
             <span
@@ -12,11 +13,12 @@
                
             ></span>
         </div>
-          <form style="display: flex;flex-direction: column;">
-            <input placeholder="Titre" class="inputs">
-            <textarea placeholder="Was it good ? Pros? Cons? "class="inputs" rows="3" cols="50"></textarea>
-          </form>
+          <div style="display: flex;flex-direction: column;">
+            <input placeholder="Titre" class="inputs" formControlName="title">
+            <textarea placeholder="Was it good ? Pros? Cons? " formControlName="comment"class="inputs" rows="3" cols="50"></textarea>
+          </div>
           <button class="btn-cart">Submit Your Review</button>
+        </form>
     </div>
     <div class="reviews">
         <h2 style="margin-bottom: 20px;">All reviews</h2>

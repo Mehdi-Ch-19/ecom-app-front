@@ -1,0 +1,12 @@
+<h3 style="margin-bottom: 30px;">Account Details</h3>
+<form [formGroup]="customerForm" (ngSubmit)="onFormSubmit(customerForm)">
+    <input class="inputs" placeholder="Name"  formControlName="username">
+    <input class="inputs" placeholder="Email" formControlName="email">
+    <div style="display: grid; grid-template-columns: 1fr 1fr; width: fit-content;">
+        <input class="inputs" placeholder="street" style="width: 145px;" formControlName="street">
+        <input class="inputs" placeholder="city" style="width: 145px; margin-left: 5px;" formControlName="city">
+    </div>
+    <input class="inputs" placeholder="country" formControlName="country">
+    <button class="save-btn" type="submit">Save</button>
+    <hr>
+</form>

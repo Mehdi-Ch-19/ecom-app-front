@@ -21,13 +21,13 @@ export class CartService {
     this.productsItem[index] = productitem
     this.productitemsubjext.next(this.productsItem)
    }
-   deleteproduct(id :number){
-      let index = this.productsItem.findIndex(f=>{f.productId == id})
+   deleteproduct(id :string){
+      let index = this.productsItem.findIndex(f=>{f.productId! == id})
       this.productsItem.splice(index,1)
       //console.log(this.products)
       this.products.forEach(p=>{
         if(p.id == id){
-          let i  = this.productsItem.findIndex(f=>{f.productId == id})
+          let i  = this.productsItem.findIndex(f=>{f.productId! == id})
           this.products.splice(i,1)
         }
       })

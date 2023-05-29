@@ -12,16 +12,15 @@ import { ProductserviceService } from 'src/app/core/service/productservice.servi
 export class CategoryAllComponent implements OnInit {
 
    products : Product[] = []
-
+   category_title :any
   constructor(private route: ActivatedRoute,private router :Router, private cartservice:CartService,
     private productservice:ProductserviceService) { }
 
   ngOnInit(): void {
-    let category_title :any
      this.route.paramMap. subscribe((params:ParamMap)=>{
-      category_title = params.get("name");
+      this.category_title = params.get("name");
     })
-    this.productservice.allproductsbycategorieName(category_title).subscribe(
+    this.productservice.allproductsbycategorieName(this.category_title).subscribe(
       data=>{
         this.products = this.productservice.sortProductsByRating(data,sorting.DESC)
       }
@@ -33,7 +32,7 @@ export class CategoryAllComponent implements OnInit {
     this.cartservice.cartnumber.next(this.cartservice.products.length)
 
   }
-  routeToProduct(id:number){
+  routeToProduct(id:string){
     this.router.navigate(['product/',id])
   }
   onOptionsSelected(value:string) {

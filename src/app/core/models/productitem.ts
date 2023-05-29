@@ -1,7 +1,7 @@
 import { Product } from "./product";
 
 export class ProductItem{
-    productId?:number;
+    productId?:string;
     productImage?:string;
     productName?:string;
     unitPrice?:number;

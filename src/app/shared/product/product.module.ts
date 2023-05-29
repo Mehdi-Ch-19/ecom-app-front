@@ -5,6 +5,7 @@ import { ProductRoutingModule } from './product-routing.module';
 import { SingleProductComponent } from './components/single-product/single-product.component';
 import { ProductComponent } from './product.component';
 import { ReviewComponent } from './components/review/review.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { ReviewComponent } from './components/review/review.component';
   ],
   imports: [
     CommonModule,
-    ProductRoutingModule
+    ProductRoutingModule,
+    ReactiveFormsModule
   ],
   exports:[
     ProductComponent
