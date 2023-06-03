@@ -19,6 +19,14 @@ const routes: Routes = [
 
   },
   {
+    path:"search",loadChildren:()=>import("./shared/search/search.module").then((m)=>m.SearchModule)
+
+  },
+  {
+    path:"dashboard",loadChildren:()=>import("./feature/dashboard/dashboard.module").then((m)=>m.DashboardModule),data:{"isDashboard":true}
+
+  },
+  {
     path:"**",redirectTo:'home',pathMatch:'full'
   }
    

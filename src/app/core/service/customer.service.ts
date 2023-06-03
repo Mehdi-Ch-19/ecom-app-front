@@ -10,7 +10,7 @@ import { Customer } from '../models/customer';
 export class CustomerService {
   servicename = "CUSTOMER-SERVICE"
   apiUrl = environment.apiURLgateway + this.servicename +"/api/v1/customer"
-  currentCustoner :Subject<Customer> = new Subject<Customer>()
+  currentCustoner :BehaviorSubject<Customer|null> = new BehaviorSubject<Customer|null>(null)
   constructor(private http : HttpClient) { }
 
   getallinfobycustomer(id : number):Observable<Customer>{

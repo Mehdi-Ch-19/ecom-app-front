@@ -1,0 +1,28 @@
+<div class="conatiner">
+    <h2>Categories</h2>
+    <h6 style="margin-top: 20px;">Create new Category</h6>
+    <form [formGroup]="categoryRequestForm" (ngSubmit)="onFormSubmit(categoryRequestForm)">
+        <input type="text" style="width: 300px;" class="input" formControlName="categoryTitle">
+        <button class="add-product"  >Save</button>
+    </form>
+    <div class="products">
+        <h5 style="margin-bottom: -10px;" >Product Name</h5>
+        <hr>
+        <table>
+           <tbody>
+            <tr  *ngFor="let cat of categories , let i = index">
+                <td  ><h5>{{cat.categoryTitle}}</h5></td>
+                <td> <button (click)="edititem(i)" class="btn-edit" style="padding: -80px;">
+                    <i class="bx bx-edit"></i>
+                    Edit</button>
+                </td>
+                <button class="btn-delete" (click)="deleteProdcut(i)">
+                    <i class="bx bx-trash-alt"></i>
+                    Delete
+                </button>
+            </tr>
+           </tbody>
+        </table>
+        
+    </div>
+</div>

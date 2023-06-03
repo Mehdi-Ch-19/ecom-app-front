@@ -6,13 +6,15 @@ import { SingleProductComponent } from './components/single-product/single-produ
 import { ProductComponent } from './product.component';
 import { ReviewComponent } from './components/review/review.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ReviewItemComponent } from './components/review/review-item/review-item.component';
 
 
 @NgModule({
   declarations: [
     SingleProductComponent,
     ProductComponent,
-    ReviewComponent
+    ReviewComponent,
+    ReviewItemComponent
   ],
   imports: [
     CommonModule,
@@ -20,7 +22,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     ReactiveFormsModule
   ],
   exports:[
-    ProductComponent
+    ProductComponent,SingleProductComponent
   ]
 })
 export class ProductModule { }

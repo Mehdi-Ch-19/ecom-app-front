@@ -1,0 +1,75 @@
+<div class="sidebar">
+    <div class="logo-details">
+      <i class="bx bxl-c-plus-plus icon"></i>
+      <div class="logo_name">Ecommerce</div>
+      <i class="bx bx-menu" id="btn"></i>
+    </div>
+    <ul class="nav-list">
+      
+      
+      <li>
+        <a [routerLink]="[' ']">
+          <i class="bx bx-home-alt"></i>
+          <span class="links_name">Dashboard</span>
+        </a>
+        <span class="tooltip">Dahboard</span>
+      </li>
+      <li>
+        <a [routerLink]="['products']">
+          <i class="bx bx-cart"></i>
+          <span class="links_name">Products</span>
+        </a>
+        <span class="tooltip">Products</span>
+      </li>
+      <li>
+        <a [routerLink]="['categories']">
+          <i class="bx bx-category"></i>
+          <span class="links_name">Category</span>
+        </a>
+        <span class="tooltip">Category</span>
+      </li>
+      <li>
+        <a [routerLink]="['orders']">
+          <i class="bx bx-list-check"></i>
+          <span class="links_name">Orders</span>
+        </a>
+        <span class="tooltip">Orders</span>
+      </li>
+      <li>
+        <a href="#">
+          <i class="bx bx-group"></i>
+          <span class="links_name">Admins</span>
+        </a>
+        <span class="tooltip">Admins</span>
+      </li>
+      <li>
+        <a href="#">
+          <i class="bx bx-grid-alt"></i>
+          <span class="links_name">Settings</span>
+        </a>
+        <span class="tooltip">Settings</span>
+      </li>
+      <li>
+        <a href="#">
+          <i class="bx bx-log-out"></i>
+          <span class="links_name">Log-out</span>
+        </a>
+        <span class="tooltip">Log-out</span>
+      </li>
+      <li class="profile">
+        <div class="profile-details">
+          <img src="profile.jpg" alt="profileImg" />
+          <div class="name_job">
+            <div class="name">Prem Shahi</div>
+            <div class="job">Web designer</div>
+          </div>
+        </div>
+        <i class="bx bx-log-out" id="log_out"></i>
+      </li>
+    </ul>
+  </div>
+  <section class="home-section">
+    <div style="background-color: rgb(253, 254, 255); padding: 30px;border-radius: 15px;height:660px;">
+      <router-outlet></router-outlet>
+    </div>
+  </section>

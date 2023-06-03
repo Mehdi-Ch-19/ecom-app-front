@@ -1,4 +1,4 @@
 <div class="center">
-    <app-single-product [product]="product"></app-single-product>
-    <app-review [product]="product"></app-review>
+    <app-single-product [product]="product" ></app-single-product>
+    <app-review [product]="product" (onReviewAdded)="refreshProdcut($event)"></app-review>
 </div>

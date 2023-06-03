@@ -59,20 +59,18 @@
 }
 .order-info {
     display: grid;
-    grid-template-columns: 1fr 1fr ;
-    gap: 20px;
-    
-}
+    grid-template-columns:1fr 1fr  ;
+ }
 .products{
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: auto;
     justify-content: center;
     align-items: center;
-    align-self: center;
 }
 .info{
     display: flex;
     flex-direction: column;
+    justify-content: center;
 }
 .info h3{
     color: rgb(114, 110, 103);
@@ -181,34 +179,8 @@ hr{
     font-weight:900 ;
     font-family: 'Poppins';
 }
-.inputs{
-    border-radius: 8px;
-    padding: 5px;
-    padding-left: 5px;
-    margin-bottom: 10px;
-    border: 1.5px solid gray;
-    font-size: 17px;
-    font-weight: 500;
-    color: black;
-}
-.save-btn{
-    padding: 5px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    display: inline-block;
-    align-items: center;
-    text-decoration: none;
-    align-self: center;
-    text-align: center;
-    color: white;
-    font-family: 'Poppins', sans-serif;
-    font-weight:600;
-    border: 1.5px solid ;
-    border-color: #0D3D29;
-    width: 300px;
-    background-color: black;
-  
-}
+ 
+ 
 .logout-btn{
     padding: 5px 15px;
     border-radius: 5px;

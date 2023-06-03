@@ -1,0 +1,23 @@
+<div class="conatiner">
+    <button class="add-product" (click)="redirectAdd()">Add new Product</button>
+    <div class="products">
+        <h5 style="margin-bottom: -10px;" >Product Name</h5>
+        <hr>
+        <table>
+           <tbody>
+            <tr  *ngFor="let product of products , let i = index">
+                <td  ><h5>{{product.productTitle}}</h5></td>
+                <td> <button (click)="edititem(i)" class="btn-edit" style="padding: -80px;">
+                    <i class="bx bx-edit"></i>
+                    Edit</button>
+                </td>
+                <button class="btn-delete" (click)="deleteProdcut(i)">
+                    <i class="bx bx-trash-alt"></i>
+                    Delete
+                </button>
+            </tr>
+           </tbody>
+        </table>
+        
+    </div>
+</div>

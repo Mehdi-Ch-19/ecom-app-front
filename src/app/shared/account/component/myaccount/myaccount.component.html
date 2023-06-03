@@ -17,11 +17,12 @@
                                 <span> {{order.shippingAdresse?.city}}</span>
                                 <span> {{order.shippingAdresse?.country}}</span>
                             </div>
-                               
-                           
                         </div>
-                        <div class="products" *ngFor="let products of order.productItem">
-                            <h3 class="product"><span class="quantity">{{products.quantity}} x </span>{{products.productName}}</h3>
+                        <div class="products" >
+                            <div *ngFor="let products of order.productItem">
+                                <h3 class="product"><span class="quantity">{{products.quantity}} x </span>{{products.productName}}</h3>
+
+                            </div>
                         </div>
                     </div>
                     <hr>

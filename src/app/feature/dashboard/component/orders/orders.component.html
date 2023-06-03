@@ -1,0 +1,35 @@
+<div class="conatiner">
+    <h2>Orders</h2>
+    <table>
+        <thead>
+            <th>Date</th>
+            <th>Status</th>
+            <th>Recipient</th>
+            <th>Products</th>
+        </thead>
+        <tbody>
+            orderId?:string;
+            customerId?:number;
+            orderDate?:Date
+            status?:string;
+            totalamount?:number;
+            productItem?:ProductItem[];
+            shippingAdresse?:ShippinAdresse;
+            customer?:Customer
+            <tr *ngFor="let order of orders">
+                <td>{{order.orderDate}}</td>
+                <td>{{order.status}}</td>
+                <td>{{order.customer?.name}}
+                    {{order.customer?.email}}
+                    {{order.shippingAdresse?.street}} {{order.shippingAdresse?.city}}
+                    {{order.shippingAdresse?.country}}
+                </td>
+                <td>
+                    <p *ngFor="let p of order.productItem">
+                        {{p.productName}}  X {{p.quantity}} 
+                    </p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

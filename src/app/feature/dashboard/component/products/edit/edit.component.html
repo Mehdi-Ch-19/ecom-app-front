@@ -1,0 +1,33 @@
+<div class="conatiner"  *ngIf="product">
+    <h4 style="margin-bottom: 20px;">Edit Product</h4>
+    <form [formGroup]="producForm" (ngSubmit)="onFormSubmit(producForm)"> 
+
+    <div class="inputs">
+        <label class="label">Product name</label>
+        <input class="input" formControlName="productTitle">
+    </div>
+    <div class="inputs">
+        <label class="label">Category</label>
+        <select class="input"  formControlName="category"  >
+            <option *ngFor="let cat of categories"     [ngValue]="cat" >{{cat.categoryTitle}}</option>
+        </select>
+     </div>
+     <div class="inputs">
+        <label class="label">Image URL</label>
+        <input class="input" type="url" formControlName="imageUrl">
+    </div>
+    <div class="inputs">
+        <label class="label">Descrption</label>
+        <textarea class="input" formControlName="description"></textarea>
+    </div>
+    <div class="inputs">
+        <label class="label">Price </label>
+        <input class="input" type="number" formControlName="price">
+    </div>
+    <div class="inputs">
+        <label class="label">Stock  </label>
+        <input class="input" type="number" formControlName="countInStock">
+    </div>
+    <button class="save">Save</button>
+    </form>
+</div>

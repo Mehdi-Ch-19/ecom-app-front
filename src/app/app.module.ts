@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,6 +13,8 @@ import { AccountModule } from './shared/account/account.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CartModule } from './shared/cart/cart.module';
 import { StoreModule } from '@ngrx/store';
+import { SearchModule } from './shared/search/search.module';
+import { DashboardModule } from './feature/dashboard/dashboard.module';
 
 @NgModule({
   declarations: [
@@ -20,16 +23,19 @@ import { StoreModule } from '@ngrx/store';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
+    DashboardModule,
     HomeModule,
     CategoryModule,
     CoreModule,
+    SearchModule,
     ProductModule,
     AccountModule,
     CartModule,
     ReactiveFormsModule,
     StoreModule.forRoot({})
-  ],
+   ],
   providers: [],
   bootstrap: [AppComponent]
 })

@@ -1,0 +1,36 @@
+.single-review{
+    display: grid;
+    grid-row: 1fr 1fr;
+}
+.stars-date{
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+    gap: 80px;
+    margin-bottom: -10px;
+}
+hr {
+    border: 0;
+    clear:both;
+    display:block;
+    width: 100%;               
+    background-color:#b2b2ac;
+    height: 1px;
+  }
+  .star {
+    display: inline-block;
+      width: 20px;
+      height: 20px;
+      margin-right: 2px;
+      cursor: pointer;
+      background: url('/assets/img/star.png') no-repeat;
+      background-size: contain;
+      transition: background-position 0.3s;
+   }
+
+  .checked {
+    color: rgb(0, 97, 42);
+  }
+  .star-rating {
+    display: inline-block;
+    margin-bottom: 20px;
+  }

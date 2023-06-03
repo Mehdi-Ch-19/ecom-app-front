@@ -22,5 +22,12 @@ export class ProductComponent implements OnInit {
     })
     
   }
+  refreshProdcut(event:any ){
+    let id  =this.route.snapshot.params["id"]
+    this.productservice.productbyid(id).subscribe((p)=>{
+      this.product = p
+      console.log(this.product)
+    })
+  }
 
 }

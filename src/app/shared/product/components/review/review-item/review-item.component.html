@@ -1,0 +1,15 @@
+  <hr>
+  <div class="stars-date">
+    <div class="star-rating">
+      <span
+      class="fa fa-star "
+      style="font-size: 24px;width: 25px; "
+        *ngFor="let star of stars"
+        [ngClass]="{ 'checked': star <= review.rating! }"
+         
+      ></span>
+  </div>
+    <h5 style="font-weight: 500; color: #b2b2ac;">{{review.reviewedAt}}</h5>
+  </div>
+  <h3 style="font-family: 'Poppins';">{{review.title}}</h3>
+  <p style="font-family: 'Poppins';">{{review.comment}}</p>

@@ -6,6 +6,7 @@ import { successLogin } from '../models/SuccessLogin';
 import { TokenService } from './token.service';
 import jwtDecode from 'jwt-decode';
 import { Router } from '@angular/router';
+import { CustomerService } from '../../service/customer.service';
 
 @Injectable({
   providedIn: 'root'
@@ -19,7 +20,7 @@ export class AuthService {
     apiUrl = environment.apiURLgateway + this.servicename 
     private userDataSubject: BehaviorSubject<any> = new BehaviorSubject(null);
     userData$: Observable<any> = this.userDataSubject.asObservable();
-  constructor(private http:HttpClient,private tokenservice : TokenService , private router:Router) { }
+  constructor(private http:HttpClient,private tokenservice : TokenService ,private customerService :CustomerService, private router:Router) { }
     
     login(loginRequest:  any):Observable<any>{
        return this.http.post<successLogin>(this.apiUrl + this.authenticationEndpoint, loginRequest)
@@ -30,6 +31,9 @@ export class AuthService {
             this.tokenservice.storeAccessToken(result.access_token)
             this.tokenservice.storeRefrshToken(result.refresh_token)
             this.tokenservice.storeUserId(result.id)
+            this.customerService.getallinfobycustomer(+localStorage.getItem("user_id")!).subscribe(customer=>{
+              this.customerService.currentCustoner.next(customer)
+            })
          }))  
     }
     signup(signupRequest:any):Observable<any>{{
@@ -40,6 +44,7 @@ export class AuthService {
       localStorage.removeItem("refreshToken");
       localStorage.removeItem("user_id")
       this.userDataSubject.next(null);
+      this.customerService.currentCustoner.next(null)
       this.router.navigate(['account/login'])
       // Call http logout method for block refresh token
     }

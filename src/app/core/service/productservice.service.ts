@@ -41,6 +41,16 @@ export class ProductserviceService {
       }
     });
   }
+  updateProduct(product:Product):Observable<Product>{
+    return this.http.post<Product>(this.apiUrl + "/update",product)
+  }
+
+  deleteProduct(id:string){
+    return this.http.delete(this.apiUrl+"/"+id)
+  }
+  addProduct(product:Product){
+    return this.http.post(this.apiUrl,product)
+  }
 
 
 }

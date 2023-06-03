@@ -17,11 +17,11 @@
 
         <div class="order-conatiner">
             <h3>Total</h3>
-            <h3 class="total">{{total_price}}</h3>
+            <h3 class="total">${{total_price}}</h3>
         </div>
         <hr>
         <div style="margin-left: 750px;">
-            <button class="checkout">Checkout</button>
+            <button class="checkout" (click)="checkout()">Checkout</button>
         </div>
     </div>
      

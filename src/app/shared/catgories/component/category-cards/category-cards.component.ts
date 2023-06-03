@@ -24,8 +24,11 @@ export class CategoryCardsComponent implements OnInit {
       this.categories = data;
       console.log(this.categories)
       this.categories.forEach(c=>{
+        if(c.products?.length!>0){
           let  cp :products_percategry = {title :c.categoryTitle,products:c.products}
           this.category_products.push(cp)
+        }
+           
           
       })
     })

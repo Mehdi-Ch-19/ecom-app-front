@@ -1,0 +1,13 @@
+<div class="center">
+    <div class="container">
+        <div class="search-bar">
+            <input placeholder="Search for products..." class="input"  (keydown)="ShowData($event)" >
+        </div>
+        <div class="products">
+<div class="product-box" *ngFor="let product of filterdata ">
+
+            <app-search-item   [product]="product"></app-search-item>
+</div>
+        </div>
+    </div>
+</div>

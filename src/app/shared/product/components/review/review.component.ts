@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import { Form, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { from } from 'rxjs';
@@ -20,8 +20,11 @@ export class ReviewComponent implements OnInit,OnChanges {
   reviews : Review[] = []
   rating!: number;
   ratingChanged = new EventEmitter<number>();
+  addreview = new EventEmitter<any>();
   currentRating!: number;
   stars: number[] = [];
+  @Output() onReviewAdded :EventEmitter<Review> =new EventEmitter<Review>()
+
   constructor(private fb :FormBuilder,private auth:AuthService,private router:Router,private reviewService:ReviewService) { 
     this.stars = Array(5).fill(0).map((_, index) => index + 1);
      
@@ -45,6 +48,7 @@ export class ReviewComponent implements OnInit,OnChanges {
         title:formData?.title
       }
       this.reviewService.addreview(review).subscribe(data=>{
+        this.onReviewAdded.emit(data)
         console.log(data)
       })
     }
