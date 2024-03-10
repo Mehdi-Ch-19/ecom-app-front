@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Form, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Form, UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { loginRequest } from 'src/app/core/auth/models/loginRequest';
 import { AuthService } from 'src/app/core/auth/service/auth.service';
@@ -11,8 +11,8 @@ import Swal from  'sweetalert2';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  loginForm! :FormGroup 
-   constructor(private fb : FormBuilder,private router :Router,private activeroute:ActivatedRoute,private auth :AuthService) { }
+  loginForm! :UntypedFormGroup 
+   constructor(private fb : UntypedFormBuilder,private router :Router,private activeroute:ActivatedRoute,private auth :AuthService) { }
 
   ngOnInit(): void {
     this.loginForm = this.fb.group({
@@ -24,7 +24,7 @@ export class LoginComponent implements OnInit {
     console.log(this.router.navigate(['signup'] ))
     this.router.navigate(['/account/signup'] )
   }   
-  onFormSubmit(form:FormGroup){
+  onFormSubmit(form:UntypedFormGroup){
     const formData: any = form.value;
     
     this.auth.login({email:formData?.email,password:formData?.password}).subscribe(res=>{

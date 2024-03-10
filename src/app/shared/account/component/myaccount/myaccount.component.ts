@@ -1,5 +1,5 @@
 import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { AuthService } from 'src/app/core/auth/service/auth.service';
 import { Customer } from 'src/app/core/models/customer';
@@ -22,7 +22,7 @@ export class MyaccountComponent implements OnInit {
   wishlistProducts:Product[] = []
   orders:Order[] = []
   customerinfo! : Customer
-  customerForm!:FormGroup
+  customerForm!:UntypedFormGroup
   id:number = +localStorage.getItem("user_id")!
 
   constructor(private wishlistservie : WishlistService,
@@ -31,7 +31,7 @@ export class MyaccountComponent implements OnInit {
     private store :Store ,
     private orderService :OrderService,
     private autheservice:AuthService,
-    private fb : FormBuilder) { }
+    private fb : UntypedFormBuilder) { }
     
   
 
@@ -71,7 +71,7 @@ export class MyaccountComponent implements OnInit {
     this.cartservice.addtocart(product)
     this.cartservice.cartnumber.next(this.cartservice.products.length)
  }
- onFormSubmit(Form:FormGroup){
+ onFormSubmit(Form:UntypedFormGroup){
 
  }
 

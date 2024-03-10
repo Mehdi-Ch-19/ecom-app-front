@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { from } from 'rxjs';
 import { Category } from 'src/app/core/models/category';
 import { Product } from 'src/app/core/models/product';
@@ -13,11 +13,11 @@ import Swal from 'sweetalert2';
   styleUrls: ['./add.component.css']
 })
 export class AddComponent implements OnInit {
-  producForm!:FormGroup
+  producForm!:UntypedFormGroup
   product!:Product
   categories :Category[] = [] 
   constructor(
-    private fb :FormBuilder,
+    private fb :UntypedFormBuilder,
     private categoryServie :CategoryService,
     private productServie:ProductserviceService
   ) { }
@@ -37,7 +37,7 @@ export class AddComponent implements OnInit {
     })
   
   }
-  onFormSubmit(form:FormGroup){
+  onFormSubmit(form:UntypedFormGroup){
     if(form.valid){
       let product :Product = {
         productTitle:form.value.productTitle,

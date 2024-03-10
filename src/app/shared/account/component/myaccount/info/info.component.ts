@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { FormBuilder, Validators,FormGroup } from '@angular/forms';
+import { UntypedFormBuilder, Validators,UntypedFormGroup } from '@angular/forms';
 import { Customer } from 'src/app/core/models/customer';
 import Swal from 'sweetalert2';
 
@@ -11,8 +11,8 @@ import Swal from 'sweetalert2';
 export class InfoComponent implements OnInit {
   @Input()customerinfo! : Customer
   @Output() onCustomerUpdated :EventEmitter<Customer>= new EventEmitter<Customer>()
-  customerForm!:FormGroup
-  constructor(private fb : FormBuilder) { }
+  customerForm!:UntypedFormGroup
+  constructor(private fb : UntypedFormBuilder) { }
 
   ngOnInit(): void {
     console.log("info-com "+this.customerinfo.adresse)
@@ -25,7 +25,7 @@ export class InfoComponent implements OnInit {
       country:[this.customerinfo.adresse?.country],
     })
   }
-  onFormSubmit(Form:FormGroup){
+  onFormSubmit(Form:UntypedFormGroup){
      
 Swal.fire({
   title: 'Do you want to save the changes?',

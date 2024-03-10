@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { AuthService } from 'src/app/core/auth/service/auth.service';
 import Swal from 'sweetalert2';
@@ -10,8 +10,8 @@ import Swal from 'sweetalert2';
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent implements OnInit {
-  signupform! :FormGroup 
-  constructor(private fb : FormBuilder,private router :Router,private activeroute:ActivatedRoute,private auth :AuthService) { }
+  signupform! :UntypedFormGroup 
+  constructor(private fb : UntypedFormBuilder,private router :Router,private activeroute:ActivatedRoute,private auth :AuthService) { }
 
   ngOnInit(): void {
     this.signupform = this.fb.group({
@@ -20,7 +20,7 @@ export class SignupComponent implements OnInit {
       password: ['',[Validators.required]]
     })
   }
-  onFormSubmit(form:FormGroup){
+  onFormSubmit(form:UntypedFormGroup){
     const formData: any = form.value;
     this.auth.signup({username:formData?.username,email:formData?.email,password:formData?.password}).subscribe(res=>{
       Swal.fire({icon:'success',title:'Well Nice to meet yoo '+formData?.username ,text:'wdw' ,allowEnterKey:false,allowOutsideClick:false })     

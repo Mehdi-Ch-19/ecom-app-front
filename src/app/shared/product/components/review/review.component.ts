@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
-import { Form, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Form, UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { from } from 'rxjs';
 import { AuthService } from 'src/app/core/auth/service/auth.service';
@@ -16,7 +16,7 @@ import { ReviewService } from 'src/app/core/service/review.service';
 export class ReviewComponent implements OnInit,OnChanges {
 
   @Input() product! : Product ;
-  reviewForm!:FormGroup
+  reviewForm!:UntypedFormGroup
   reviews : Review[] = []
   rating!: number;
   ratingChanged = new EventEmitter<number>();
@@ -25,7 +25,7 @@ export class ReviewComponent implements OnInit,OnChanges {
   stars: number[] = [];
   @Output() onReviewAdded :EventEmitter<Review> =new EventEmitter<Review>()
 
-  constructor(private fb :FormBuilder,private auth:AuthService,private router:Router,private reviewService:ReviewService) { 
+  constructor(private fb :UntypedFormBuilder,private auth:AuthService,private router:Router,private reviewService:ReviewService) { 
     this.stars = Array(5).fill(0).map((_, index) => index + 1);
      
   }
@@ -33,7 +33,7 @@ export class ReviewComponent implements OnInit,OnChanges {
     this.product = changes["product"].currentValue
      this.reviews = this.product.reviews!;
   }
-  onFormSubmit(form:FormGroup){
+  onFormSubmit(form:UntypedFormGroup){
     const formData: any = form.value;
     console.log("data")
     console.log(formData?.comment,formData?.title,this.currentRating)

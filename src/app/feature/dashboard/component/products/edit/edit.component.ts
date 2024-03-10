@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { Category } from 'src/app/core/models/category';
 import { Product } from 'src/app/core/models/product';
@@ -13,12 +13,12 @@ import Swal from 'sweetalert2';
   styleUrls: ['./edit.component.css']
 })
 export class EditComponent implements OnInit {
-  producForm!:FormGroup
+  producForm!:UntypedFormGroup
   product!:Product
   categories :Category[] = [] 
   product_cat! :Category
   constructor(private router:ActivatedRoute,
-    private fb :FormBuilder,
+    private fb :UntypedFormBuilder,
     private categoryServie :CategoryService,
     private productServie:ProductserviceService) { 
     }
@@ -67,7 +67,7 @@ export class EditComponent implements OnInit {
     console.log(index)
     return index
   }
-  onFormSubmit(form:FormGroup){
+  onFormSubmit(form:UntypedFormGroup){
     let product :Product = {
       productTitle:form.value.productTitle,
       description:form.value.description,

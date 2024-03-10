@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { Category } from 'src/app/core/models/category';
 import { CategoryService } from 'src/app/core/service/category.service';
 import Swal from 'sweetalert2';
@@ -11,10 +11,10 @@ import Swal from 'sweetalert2';
 export class ListCategoriesComponent implements OnInit {
 
   categories:Category[]=[]
-  categoryRequestForm!:FormGroup
+  categoryRequestForm!:UntypedFormGroup
 
 
-  constructor(private categoryServie :CategoryService,private fb :FormBuilder) { }
+  constructor(private categoryServie :CategoryService,private fb :UntypedFormBuilder) { }
 
   ngOnInit(): void {
     this.categoryServie.category_list().subscribe(c=>{
@@ -80,7 +80,7 @@ export class ListCategoriesComponent implements OnInit {
     })
 
   }
-  onFormSubmit(form:FormGroup){
+  onFormSubmit(form:UntypedFormGroup){
     if(form.valid){
       this.categoryServie.addCategory({categoryTitle:form.value.categoryTitle}).subscribe(res=>{
         this.categoryServie.category_list().subscribe(c=>{

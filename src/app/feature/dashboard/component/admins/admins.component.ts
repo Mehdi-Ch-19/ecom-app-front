@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { Customer } from 'src/app/core/models/customer';
 import { CustomerService } from 'src/app/core/service/customer.service';
 import Swal from 'sweetalert2';
@@ -11,8 +11,8 @@ import Swal from 'sweetalert2';
 })
 export class AdminsComponent implements OnInit {
   admins :Customer[] =[]
-  emailForm!:FormGroup
-  constructor(private custmerservice :CustomerService,private fb :FormBuilder) { }
+  emailForm!:UntypedFormGroup
+  constructor(private custmerservice :CustomerService,private fb :UntypedFormBuilder) { }
 
   ngOnInit(): void {
     this.emailForm = this.fb.group({
@@ -26,7 +26,7 @@ export class AdminsComponent implements OnInit {
     console.log(this.admins)
 
   }
-  onFormSubmit(form:FormGroup){
+  onFormSubmit(form:UntypedFormGroup){
     let c :Customer = {email:form.value.email}
     Swal.fire({
       title: 'Enter Your Password',
