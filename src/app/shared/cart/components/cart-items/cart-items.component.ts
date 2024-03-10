@@ -71,6 +71,7 @@ export class CartItemsComponent implements OnInit {
           }
           console.log(order)
           this.orderservice.createorder(order).subscribe(res=>{
+            console.log("ok"+res)
             Swal.fire('Your Order was Created', 'Check your email', 'success')
           })
           }

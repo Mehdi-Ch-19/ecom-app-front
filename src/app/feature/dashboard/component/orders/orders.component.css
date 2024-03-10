@@ -1,4 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
 .conatiner{
     display: flex;
     flex-direction: column;
 }
+.table-container{
+    display: flex;
+    flex-direction:column ;
+    margin-left: 20px;
+    margin-top: 25px;
+    padding: 20px;
+}
+.info{
+    display: grid;
+    grid-template-columns: 1fr 200px 2fr 2fr;
+    gap: 50px;
+    margin-bottom: -20px;
+}
+.adresse{
+    display: flex;
+    flex-direction: column;
+}
+.products{
+    display: flex;
+    flex-direction: column;
+}
+hr {
+    border: 0;
+    clear:both;
+    display:block;
+    width: 100%;               
+    background-color:#b2b2ac;
+    height: 1px;
+  }
+.heders{
+    color: rgb(70, 70, 149);
+    
+}
+
+
+
+.content-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 1em;
+    height: fit-content;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+.status{
+    background-color: rgb(244, 49, 49);
+    padding: 5px;
+    border-radius: 20px;
+    color: #ffffff;
+    text-align: center;
+}
+
+.content-table thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+    font-weight: bold;
+}
+
+.content-table th,
+.content-table td {
+    padding: 12px 15px;
+}
+.content-table td {
+    font-family: 'Poppins';
+}
+
+.content-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+ 

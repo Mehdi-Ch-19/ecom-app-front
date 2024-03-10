@@ -168,6 +168,10 @@
   pointer-events: none;
   transition: 0.4s;
 }
+.active-link{
+  color: #fff;
+   
+}
 .sidebar.open li a .links_name{
   opacity: 1;
   pointer-events: auto;

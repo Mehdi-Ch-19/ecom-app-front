@@ -1,0 +1,28 @@
+<div  class="conatiner">
+    <h2 style="margin-bottom: 35px;">Admins</h2>
+    <h5  style="margin-bottom: 20px;">Add new admin</h5>
+    <div class="form-input">
+    <form [formGroup]="emailForm" (ngSubmit)="onFormSubmit(emailForm)">
+        <input placeholder="google email" class="input" formControlName="email">
+        <button class="btn">Add admin</button>
+    </form>
+    </div>
+    <h5  style="margin-bottom: 20px;margin-top: 
+    40px;">Existing admins</h5>
+      <div class="products">
+        <hr>
+        <table>
+           <tbody>
+            <tr  *ngFor="let admin of admins , let i = index">
+                <td  ><h5>{{admin.email}}</h5></td>
+                
+                <button class="btn-delete" (click)="deleteadmin(i)"  style="margin-bottom: 10px;">
+                    <i class="bx bx-trash-alt"></i>
+                    Delete
+                </button>
+            </tr>
+           </tbody>
+        </table>
+        
+    </div>
+</div>

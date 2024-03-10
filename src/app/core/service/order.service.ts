@@ -20,7 +20,7 @@ export class OrderService {
   getallorders():Observable<Order[]>{
     return this.http.get<Order[]>(this.apiUrl )
   }
-  createorder(order:OrderRequest){
-    return this.http.post(this.apiUrl+"/create",order)
+  createorder(order:OrderRequest):Observable<string>{
+    return this.http.post<string>(this.apiUrl+"/create",order)
   }
 }

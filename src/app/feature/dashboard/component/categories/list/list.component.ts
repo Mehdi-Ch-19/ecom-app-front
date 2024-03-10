@@ -31,8 +31,7 @@ export class ListCategoriesComponent implements OnInit {
     let cid = this.categories[i].categoryId
  
     Swal.fire({
-      title: "An input!",
-      text: "Edit your Categorie",
+      title: "Edit your Categorie",
       inputValue:this.categories[i].categoryTitle,
       input: 'text',
       showCancelButton: true,

@@ -9,6 +9,7 @@ import { ListComponent } from './component/products/list/list.component';
 import { AddComponent } from './component/products/add/add.component';
 import { CategoriesComponent } from './component/categories/categories.component';
 import { OrdersComponent } from './component/orders/orders.component';
+import { AdminsComponent } from './component/admins/admins.component';
 
 const routes: Routes = [
   {
@@ -36,6 +37,9 @@ const routes: Routes = [
     },
     {
       path:"orders",component: OrdersComponent
+    },
+    {
+      path:"admins", component:AdminsComponent
     }
   ]
   },

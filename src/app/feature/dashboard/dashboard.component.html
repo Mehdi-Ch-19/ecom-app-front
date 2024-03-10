@@ -10,14 +10,14 @@
       <li>
         <a [routerLink]="[' ']">
           <i class="bx bx-home-alt"></i>
-          <span class="links_name">Dashboard</span>
+          <span class="links_name" [routerLinkActive]="['active-link']">Dashboard</span>
         </a>
         <span class="tooltip">Dahboard</span>
       </li>
       <li>
         <a [routerLink]="['products']">
           <i class="bx bx-cart"></i>
-          <span class="links_name">Products</span>
+          <span class="links_name" [routerLinkActive]="['active-link']">Products</span>
         </a>
         <span class="tooltip">Products</span>
       </li>
@@ -36,7 +36,7 @@
         <span class="tooltip">Orders</span>
       </li>
       <li>
-        <a href="#">
+        <a [routerLink]="['admins']">
           <i class="bx bx-group"></i>
           <span class="links_name">Admins</span>
         </a>
@@ -58,10 +58,10 @@
       </li>
       <li class="profile">
         <div class="profile-details">
-          <img src="profile.jpg" alt="profileImg" />
+          <img src="https://www.clipartmax.com/png/small/98-984206_profile-photo-facebook-profile-picture-icon.png" alt="profileImg" />
           <div class="name_job">
-            <div class="name">Prem Shahi</div>
-            <div class="job">Web designer</div>
+            <div class="name">Mehdi Chiheb</div>
+            <div class="job">Full Stack developer</div>
           </div>
         </div>
         <i class="bx bx-log-out" id="log_out"></i>

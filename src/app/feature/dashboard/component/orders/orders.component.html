@@ -1,35 +1,68 @@
 <div class="conatiner">
-    <h2>Orders</h2>
-    <table>
+    <h2 >Orders</h2>
+ 
+
+    <!-- <div class="table-container">
+        <div class="info">
+            <h5 class="heders">Date</h5>
+            <h5 class="heders">Status</h5>
+            <h5 class="heders">Recipient</h5>
+            <h5 class="heders">Products</h5>
+        </div>
+        <hr>
+        <div class="info" *ngFor="let order of orders">
+            <h5>{{order.orderDate}}</h5>
+            <h5>{{order.status}}</h5>
+            <div class="adresse">
+                <h5>{{order.customer?.name}}</h5>
+                <h5>{{order.customer?.email}}</h5>
+                <div style="display:inline-flex; gap: 10px;">
+                    <h5 >{{order.customer?.adresse?.street}} </h5>
+                     <h5>{{order.customer?.adresse?.city}}</h5>
+                </div>
+                <h5>{{order.customer?.adresse?.country}}</h5>
+            </div>
+            <div class="products">
+                <h5 *ngFor="let product of order.productItem">
+                    {{product.productName}} X{{product.quantity}}
+                </h5>
+            </div>
+        </div>
+    </div>*/ -->
+
+    <table class="content-table">
         <thead>
+          <tr>
             <th>Date</th>
-            <th>Status</th>
+            <th style="width: 150px;">Status</th>
             <th>Recipient</th>
             <th>Products</th>
+          </tr>
         </thead>
         <tbody>
-            orderId?:string;
-            customerId?:number;
-            orderDate?:Date
-            status?:string;
-            totalamount?:number;
-            productItem?:ProductItem[];
-            shippingAdresse?:ShippinAdresse;
-            customer?:Customer
-            <tr *ngFor="let order of orders">
-                <td>{{order.orderDate}}</td>
-                <td>{{order.status}}</td>
-                <td>{{order.customer?.name}}
-                    {{order.customer?.email}}
-                    {{order.shippingAdresse?.street}} {{order.shippingAdresse?.city}}
-                    {{order.shippingAdresse?.country}}
+          <tr *ngFor="let order of orders">
+            <td >
+                <h5>{{order.orderDate}}</h5>
+
                 </td>
-                <td>
-                    <p *ngFor="let p of order.productItem">
-                        {{p.productName}}  X {{p.quantity}} 
-                    </p>
-                </td>
-            </tr>
+            <td><h5 class="status">{{order.status}}</h5></td>
+            <td  >
+                <h5>{{order.customer?.name}}</h5>
+                <h5>{{order.customer?.email}}</h5>
+                <div style="display:inline-flex; gap: 10px;">
+                    <h5 >{{order.customer?.adresse?.street}} </h5>
+                     <h5>{{order.customer?.adresse?.city}}</h5>
+                </div>
+                <h5>{{order.customer?.adresse?.country}}</h5>
+            </td>
+            <td [colSpan]="order?.productItem?.length"  >
+                <h5 *ngFor="let product of order.productItem">
+                    {{product.productName}} <span style="color: rgb(0, 4, 255);"> X{{product.quantity}}</span>
+                </h5>
+            </td>
+          </tr>
+         
         </tbody>
-    </table>
+      </table>
 </div>
+

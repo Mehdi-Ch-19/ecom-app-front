@@ -19,6 +19,9 @@ export class CustomerService {
   updateCustomer(customer:Customer){
     return this.http.post(this.apiUrl+"/update",customer)
   }
+  getalladmins():Observable<Customer[]>{
+    return this.http.get<Customer[]>(this.apiUrl+'/admins')
+  }
 
 
 }
